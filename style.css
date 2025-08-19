@@ -1,0 +1,610 @@
+      @import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Architects+Daughter:wght@400&family=JetBrains+Mono:wght@300;400;500&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --ink: #2c2c2c;
+        --charcoal: #4a4a4a;
+        --paper: #f7f5f3;
+        --cream: #faf8f5;
+        --pencil-gray: #8e8e93;
+        --sketch-blue: #007aff;
+        --warm-orange: #ff9500;
+        --forest-green: #34c759;
+        --art-red: #ff3b30;
+      }
+
+      body {
+        font-family: "Architects Daughter", cursive;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.6;
+        background-image: radial-gradient(
+          circle at 1px 1px,
+          var(--pencil-gray) 1px,
+          transparent 0
+        );
+        background-size: 20px 20px;
+        background-attachment: fixed;
+      }
+
+      /* Hand-drawn paper texture */
+      .paper-sheet {
+        background: var(--cream);
+        margin: 20px auto;
+        max-width: 900px;
+        box-shadow: 0 0 0 1px #d6d6d6, 0 4px 8px rgba(0, 0, 0, 0.1),
+          inset 0 0 100px rgba(0, 0, 0, 0.02);
+        position: relative;
+        transform: rotate(-0.5deg);
+      }
+
+      .paper-sheet::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 60px;
+        bottom: 0;
+        width: 1px;
+        background: var(--art-red);
+        opacity: 0.3;
+      }
+
+      .content {
+        padding: 60px 80px 60px 100px;
+        position: relative;
+      }
+.contact-info {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.contact-item {
+  font-family: "Architects Daughter", cursive;
+  font-size: 1.2rem;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
+  transform: rotate(var(--tilt, 0deg));
+}
+
+/* playful tilts */
+.contact-item:nth-child(1) { --tilt: -3deg; }
+.contact-item:nth-child(2) { --tilt: 2deg; }
+.contact-item:nth-child(3) { --tilt: -1.5deg; }
+
+.contact-item:hover {
+  color: var(--sketch-blue);
+  transform: rotate(0deg) scale(1.1);
+}
+
+.contact-icon {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+  transform: rotate(-12deg) scale(1.2);
+}
+
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 80px;
+        position: relative;
+      }
+
+      .name {
+        font-family: "Homemade Apple", cursive;
+        font-size: 3.5rem;
+        color: var(--ink);
+        margin-bottom: 10px;
+        transform: rotate(-1deg);
+        position: relative;
+      }
+
+      .name::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 20px;
+        right: 20px;
+        height: 3px;
+        background: var(--warm-orange);
+        border-radius: 2px;
+        transform: rotate(1deg);
+      }
+
+      .tagline {
+        font-size: 1.4rem;
+        color: var(--charcoal);
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .tagline::before {
+        content: "~ ";
+        color: var(--sketch-blue);
+      }
+
+      .tagline::after {
+        content: " ~";
+        color: var(--sketch-blue);
+      }
+
+      .contact-info {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.9rem;
+        color: var(--pencil-gray);
+        background: rgba(255, 255, 255, 0.5);
+        padding: 15px 20px;
+        border-radius: 8px;
+        border: 1px dashed var(--pencil-gray);
+        display: inline-block;
+        transform: rotate(0.5deg);
+      }
+
+      /* Hand-drawn elements */
+      .doodle {
+        position: absolute;
+        font-size: 2rem;
+        opacity: 0.6;
+        transform: rotate(var(--rotation, 0deg));
+      }
+
+      .doodle-1 {
+        top: 20px;
+        right: 40px;
+        --rotation: 15deg;
+      }
+      .doodle-2 {
+        bottom: 30px;
+        left: 30px;
+        --rotation: -20deg;
+      }
+      .doodle-3 {
+        top: 50%;
+        right: 20px;
+        --rotation: 10deg;
+      }
+
+      /* Section headings */
+      .section {
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title {
+        font-family: "Homemade Apple", cursive;
+        font-size: 2.2rem;
+        color: var(--sketch-blue);
+        margin-bottom: 30px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -20px;
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--forest-green);
+        border-radius: 50%;
+        transform: rotate(-20deg);
+        opacity: 0.4;
+      }
+
+      /* About section */
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .about-text p {
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .highlight {
+        background: linear-gradient(
+          120deg,
+          transparent 0%,
+          var(--warm-orange) 20%,
+          var(--warm-orange) 80%,
+          transparent 100%
+        );
+        background-size: 100% 40%;
+        background-repeat: no-repeat;
+        background-position: 0 70%;
+        padding: 0 4px;
+      }
+
+      /* Skills as hand-drawn tags */
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 30px 0;
+      }
+
+      .skill {
+        background: var(--cream);
+        border: 1.5px solid var(--ink);
+        border-radius: 20px;
+        padding: 8px 15px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem;
+        transform: rotate(var(--skill-rotation));
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .skill:nth-child(odd) {
+        --skill-rotation: 2deg;
+      }
+      .skill:nth-child(even) {
+        --skill-rotation: -1.5deg;
+      }
+      .skill:nth-child(3n) {
+        --skill-rotation: 1deg;
+      }
+
+      .skill:hover {
+        transform: rotate(0deg) scale(1.1);
+        background: var(--sketch-blue);
+        color: white;
+      }
+
+      /* Projects as sketched cards */
+      .projects {
+        display: grid;
+        gap: 40px;
+      }
+
+      .project {
+        background: var(--cream);
+        border: 2px solid var(--ink);
+        border-radius: 12px;
+        padding: 30px;
+        transform: rotate(var(--project-rotation));
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+
+      .project:nth-child(odd) {
+        --project-rotation: 1deg;
+      }
+      .project:nth-child(even) {
+        --project-rotation: -0.8deg;
+      }
+
+      .project:hover {
+        transform: rotate(0deg) translateY(-5px);
+      }
+
+      .project::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        width: 20px;
+        height: 20px;
+        background: var(--art-red);
+        border-radius: 50%;
+        transform: rotate(45deg);
+      }
+
+      .project-title {
+        font-family: "Homemade Apple", cursive;
+        font-size: 1.8rem;
+        color: var(--forest-green);
+        margin-bottom: 15px;
+      }
+
+      .project-desc {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .tech-tag {
+        background: var(--warm-orange);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 10px;
+        font-size: 0.75rem;
+        font-family: "JetBrains Mono", monospace;
+        transform: rotate(-1deg);
+      }
+
+      .project-link {
+        display: inline-block;
+        background: var(--ink);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transform: rotate(1deg);
+        transition: all 0.3s ease;
+      }
+
+      .project-link:hover {
+        background: var(--sketch-blue);
+        transform: rotate(0deg) scale(1.05);
+      }
+
+      /* Education timeline */
+      .education {
+        position: relative;
+        margin-left: 40px;
+      }
+
+      .education::before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--pencil-gray);
+        opacity: 0.5;
+      }
+
+      .edu-item {
+        background: var(--cream);
+        border: 1px solid var(--pencil-gray);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        transform: rotate(var(--edu-rotation));
+      }
+
+      .edu-item:nth-child(odd) {
+        --edu-rotation: 0.5deg;
+      }
+      .edu-item:nth-child(even) {
+        --edu-rotation: -0.7deg;
+      }
+
+      .edu-item::before {
+        content: "";
+        position: absolute;
+        left: -30px;
+        top: 15px;
+        width: 12px;
+        height: 12px;
+        background: var(--forest-green);
+        border-radius: 50%;
+      }
+
+      .edu-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 5px;
+      }
+
+      .edu-school {
+        font-size: 1rem;
+        color: var(--charcoal);
+        margin-bottom: 5px;
+      }
+
+      .edu-year {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.9rem;
+        color: var(--pencil-gray);
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 1px dashed var(--pencil-gray);
+        position: relative;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      .social-link {
+        background: var(--cream);
+        border: 1.5px solid var(--ink);
+        border-radius: 8px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: var(--ink);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.9rem;
+        transform: rotate(var(--social-rotation));
+        transition: all 0.3s ease;
+      }
+
+      .social-link:nth-child(1) {
+        --social-rotation: 2deg;
+      }
+      .social-link:nth-child(2) {
+        --social-rotation: -1deg;
+      }
+      .social-link:nth-child(3) {
+        --social-rotation: 1.5deg;
+      }
+      .social-link:nth-child(4) {
+        --social-rotation: -2deg;
+      }
+
+      .social-link:hover {
+        background: var(--sketch-blue);
+        color: white;
+        transform: rotate(0deg) scale(1.1);
+      }
+
+      .footer-note {
+        font-size: 0.9rem;
+        color: var(--pencil-gray);
+        margin-top: 20px;
+      }
+
+     .sketchbook-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.sketch-item {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid var(--ink);
+}
+
+.sketch-placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* makes all equal squares */
+  overflow: hidden;
+}
+
+.sketch-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop & keep aspect */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.sketch-placeholder:hover img {
+  transform: scale(1.08);
+}
+
+.sketch-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(44, 44, 44, 0.7);
+  color: white;
+  padding: 10px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+
+.sketch-placeholder:hover .sketch-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sketch-link {
+  font-family: "Architects Daughter", cursive; /* lighter handwritten feel */
+  font-size: 1.1rem;
+  color: var(--sketch-blue);
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding: 2px 4px;
+}
+
+/* Subtle underline animation on hover */
+.sketch-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--sketch-blue);
+  transition: width 0.4s ease;
+}
+
+.sketch-link:hover::after {
+  width: 100%;
+}
+
+/* Color change on hover */
+.sketch-link:hover {
+  color: var(--warm-orange);
+}
+
+/* Mobile: one per row */
+@media (max-width: 768px) {
+  .sketchbook-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .paper-sheet {
+          margin: 10px;
+          transform: rotate(0deg);
+        }
+
+        .content {
+          padding: 40px 30px 40px 50px;
+        }
+
+        .name {
+          font-size: 2.5rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .education {
+          margin-left: 20px;
+        }
+
+        .social-links {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      /* Subtle animations */
+      @keyframes gentle-float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(var(--rotation, 0deg));
+        }
+        50% {
+          transform: translateY(-3px) rotate(var(--rotation, 0deg));
+        }
+      }
+
+      .doodle {
+        animation: gentle-float 4s ease-in-out infinite;
+      }
